@@ -1,0 +1,58 @@
+@font-face { font-family: 'pokemongb'; src: url('./app/Pokemon_GB/Pokemon_GB.ttf'); }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: pokemongb;
+    background: #202020;
+    color: white;
+    text-transform: capitalize;
+  }
+
+  h1{
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .Pokebola{
+    height: 30px;
+    width: 30px;
+    vertical-align: text-bottom;
+  }
+
+  .pokemon-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .pokemon {
+    background-color: #000;
+    border-radius: 0px;
+    border-color: #fff;
+    border-width: 2px;
+    box-shadow: 0 0 5px #fff;
+    padding: 20px;
+    text-align: justify;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .pokemon img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  @media only screen and (min-width: 768px) {
+    .pokemon {
+      width: calc((100% - 60px) / 3);
+    }
+  }
+
+  @media only screen and (min-width: 1024px) {
+    .pokemon {
+      width: calc((100% - 80px) / 4);
+    }
+  }
