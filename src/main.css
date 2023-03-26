@@ -11,10 +11,16 @@
 
   h1{
     text-align: center;
-    margin-bottom: 30px;
+    margin: 25px;
   }
 
-  .Pokebola{
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+
+  .img-pokebola{
     height: 30px;
     width: 30px;
     vertical-align: text-bottom;
@@ -29,21 +35,22 @@
   }
 
   .pokemon {
-    background-color: #000;
-    border-radius: 0px;
-    border-color: #fff;
-    border-width: 2px;
-    box-shadow: 0 0 5px #fff;
+    background-color: #101010;
     padding: 20px;
     text-align: justify;
     width: 100%;
-    max-width: 300px;
+    box-sizing: content-box;
+    border: 3px solid white;
   }
 
-  .pokemon img {
-    max-width: 100%;
-    height: auto;
+  .form-pokemon{
+    padding: 20px;
   }
+  
+  #btn-task-save{
+    margin-top: 20px;
+  }
+
 
   @media only screen and (min-width: 768px) {
     .pokemon {

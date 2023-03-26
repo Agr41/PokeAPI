@@ -36,7 +36,8 @@ export const saveTask = (
   defensePokemon,
   specialAttackPokemon,
   specialDefensePokemon,
-  speedPokemon
+  speedPokemon,
+  imgPokemon
   ) => {
 
   addDoc(collection(db, 'tasks'), {
@@ -50,7 +51,8 @@ export const saveTask = (
     defensePokemon: defensePokemon,
     specialAttackPokemon: specialAttackPokemon,
     specialDefensePokemon: specialDefensePokemon,
-    speedPokemon: speedPokemon
+    speedPokemon: speedPokemon,
+    imgPokemon: imgPokemon
   })
 };
 

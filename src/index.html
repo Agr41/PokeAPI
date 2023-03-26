@@ -16,32 +16,48 @@
 <body>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
     <div class="container">
-      <a class="navbar-brand" href="#"><img src="./app/pokebola.png" alt="Pokebola" class="Pokebola"> PokeAPI</a>
+      <a class="navbar-brand" href="#hr-top"><img src="./app/pokebola.png" alt="Pokebola" class="img-pokebola"> PokeAPI</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+      <a class="nav-link logged-in ms-5 me-5" href="#hr-form" id="">Create</a>
+      <a class="nav-link logged-in" href="#hr-created" id="">Pokemons</a>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ms-auto">
-          <a class="nav-link logged-out" href="#" data-bs-toggle="modal" data-bs-target="#signinModal">Signin</a>
-          <a class="nav-link logged-out" href="#" data-bs-toggle="modal" data-bs-target="#signupModal">Signup</a>
-          <a class="nav-link logged-in" href="#" id="logout">Logout</a>
+          <a class="nav-link logged-out" href="#" data-bs-toggle="modal" data-bs-target="#signinModal">SignIn</a>
+          <a class="nav-link logged-out" href="#" data-bs-toggle="modal" data-bs-target="#signupModal">SignUp</a>
+          <a class="nav-link logged-in" href="#" id="logout">LogOut</a>
         </div>
       </div>
     </div>
   </nav>
 
-<!-- PokeAPI -->
-<div class="logged-in">
-  <h1>Pokemons</h1>
-    <div id="pokemon-list" class="pokemon-container"></div>
+  <div class="logged-out">
+    <div class="container text-center">
+    <h1 class="log-title">SignIn to See the Pokemons</h1>
+    
+      <img src="./app/Snorlax.webp" alt="Snorlax" class="imgSnorlax">
+    </div>
   </div>
 
+  <hr  id="hr-top">
+
+<!-- PokeAPI -->
+<div class="logged-in">
+  <h1 id="title-pokemon">Pokemons</h1>
+    <div id="pokemon-list" class="pokemon-container">
+      <!-- Pokemons -->
+    </div>
+  </div>
+
+  <hr class="border border-2 opacity-75 logged-in" id="hr-form">
+
   <!-- AddPokemons -->
-  <form id="task-form" class="logged-in">
-    <h2>Create Your Own Pokemon</h2>
+  <form id="task-form" class="logged-in form-pokemon">
+    <h1 id="form-title">Create Your Own Pokemon</h1>
     <div class="form-group">
       <label for="task-title">Name:</label>
       <input type="text" class="form-control" id="task-title" placeholder="Pokemon Name" required>
@@ -95,6 +111,7 @@
           <label for="speed">Speed:</label>
           <input type="number" class="form-control" id="pokemon-speed" placeholder="0" value="0">
         </div>
+
       </div>
     </div>
   
@@ -122,20 +139,24 @@
       <option value="fairy">Fairy</option>
     </select>
     
+    <div class="col">
+      <label for="image">Image URL:</label>
+      <input type="url" class="form-control" id="img-pokemon" placeholder="http://image/pokemon" >
+    </div>
   
     <button type="submit" class="btn btn-primary w-100" id="btn-task-save">Save</button>
   </form>
-  
 
-  <div id="tasks-container" class="logged-in container p-4">
-    <!-- Aquí van las tareas -->
-  </div>
-  
+  <hr class="border border-2 opacity-75 logged-in" id="hr-created">
 
-  <!-- Posts -->
-  <div class="pokemon-container posts">
-
+  <!-- YourPokemons -->
+<div class="logged-in">
+  <h1 id="created-title">Your Pokemons</h1>
+  <div id="tasks-container" class="pokemon-container">
+    <!-- Pokemons -->
   </div> 
+</div> 
+
 
   <!-- Modals -->
   <!-- SignUp -->
@@ -151,12 +172,12 @@
           <form id="signup-form">
 
             <label for="email">Email:</label>
-            <input type="text" id="signup-email" class="form-control mb-3" placeholder="Title" required>
+            <input type="text" id="signup-email" class="form-control mb-3" placeholder="user@mail.com" required>
 
             <label for="password">Password:</label>
             <input type="password" id="signup-password" class="form-control mb-3" placeholder="Password" required>
 
-            <button type="submit" class="btn btn-primary">Save changes</button>
+            <button type="submit" class="btn btn-success w-100">Save</button>
           </form>
         </div>
       </div>
@@ -167,23 +188,23 @@
   <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalSignin"
     aria-hidden="true">
     <div class="modal-dialog">
-      <div class="modal-content">
+      <div class="modal-content bg-dark">
         <div class="modal-header">
           <h3>SignIn</h3>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <form id="login-form">
-            <label for="email">Email</label>
-            <input type="text" id="login-email" class="form-control mb-3" placeholder="Title" required>
+            <label for="email">Email:</label>
+            <input type="email" id="login-email" class="form-control mb-3" placeholder="user@mail.com" required>
             <label for="password">Password:</label>
             <input type="password" id="login-password" class="form-control mb-3" placeholder="Password" required>
 
-            <button type="submit" class="btn btn-success w-100 mb-4">Login</button>
+            <button type="submit" class="btn btn-success w-100 mb-4">SignIn</button>
 
-            <button type="button" class="btn btn-info" id="googleLogin">Google</button>
+            <button type="button" class="btn btn-danger" id="googleLogin">Google</button>
             <button type="button" class="btn btn-primary" id="facebookLogin">Facebook</button>
-            <button type="button" class="btn btn-dark" id="githubLogin">Github</button>
+            <button type="button" class="btn btn-light" id="githubLogin">Github</button>
           </form>
         </div>
       </div>

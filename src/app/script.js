@@ -1,4 +1,4 @@
-fetch("https://pokeapi.co/api/v2/pokemon?limit=10&offset=0")
+fetch("https://pokeapi.co/api/v2/pokemon?limit=99&offset=0")
 .then((response) => response.json())
 .then((data) => {
   const pokemonList = document.getElementById("pokemon-list");
